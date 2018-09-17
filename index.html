@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>세장을 연속으로 바꾸기</title>
+	<style type="text/css">
+		#flower{width:300px; height:300px; background: url('flower1.jpg');
+		background-size: cover; }
+	</style>
+</head>
+<body>
+	<div id="flower"></div>
+	<button id="prev"> < 이전으로  </button>
+	<button onclick="changeFlower(1)"> 1번 </button>
+	<button onclick="changeFlower(2)"> 2번 </button>
+	<button onclick="changeFlower(3)"> 3번 </button>
+	<button onclick="changeFlower(4)"> 4번 </button>
+	<button onclick="changeFlower(5)"> 5번 </button>
+	<button onclick="changeFlower(6)"> 6번 </button>
+	<button onclick="changeFlower(7)"> 7번 </button>
+	<button id="next"> 다음으로 > </button>
+	
+
+	<script type="text/javascript">
+		
+		var currentFlower = 1;
+
+		next.onclick = function(){	
+			currentFlower++;
+			if(currentFlower == 8){ currentFlower = 1;};
+			changeFlower(currentFlower);
+		}
+
+		prev.onclick = function(){	
+			currentFlower--;
+			if(currentFlower == 0){ currentFlower = 7;};
+			changeFlower(currentFlower);
+		}
+
+		function changeFlower(f){
+			flower.style.background = "url('flower" + f + ".jpg')";
+			flower.style.backgroundSize = "cover";	
+		}
+		
+	</script>
+</body>
+</html>
